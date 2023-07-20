@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fitness Calculator</title>
+    <!-- Load Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Load custom CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Load JavaScript functions -->
+    <script src="functions.js"></script>
+</head>
+<body>
+<div>
+    <!-- Heading -->
+    <h1><b>F</b>itness  <b>C</b>alculator</h1>
+    <!-- Calculator Form -->
+    <form class="form" id="calculator-form" action="#">
+        <!-- Row One - Select Calculator Dropdown -->
+        <div class="row-one">
+            <label for="calculator" class="text">Select Calculator:</label>
+            <select id="calculator" name="calculator" required>
+                <option value="bmi">BMI</option>
+                <option value="bodyfat">Body Fat Index</option>
+                <option value="idealweight">Ideal Weight</option>
+                <option value="caloriesburned">Calories Burned</option>
+            </select>
+        </div>
+        <!-- Row Two - Calculator Fields -->
+        <div class="row-two">
+            <!-- BMI Fields -->
+            <div id="bmi-fields" >
+                <label for="weight" class="text">Weight (kg):</label>
+                <input type="text" class="text-input" id="weight" name="Weight"  />
+
+                <label for="height" class="text">Height (cm):</label>
+                <input type="text" class="text-input" id="height" name="Height"  />
+            </div>
+
+            <!-- Body Fat Fields -->
+            <div id="bodyfat-fields" style="display: none;">
+                <label for="age" class="text">Age:</label>
+                <input type="text" class="text-input" id="age" name="Age"  />
+                
+                <label for="gender" class="text">Gender:</label>
+                <select id="gender" name="Gender" >
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+
+            <!-- Ideal Weight Fields -->
+            <div id="idealweight-fields" style="display: none;">
+                <!-- Ideal Weight result will be displayed here -->
+            </div>
+
+            <!-- Calories Burned Fields -->
+            <div id="caloriesburned-fields" style="display: none;">
+                <label for="activityLevel" class="text">Activity Level:</label>
+                <select id="activityLevel" name="ActivityLevel" required>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="lightlyactive">Lightly Active</option>
+                    <option value="moderatelyactive">Moderately Active</option>
+                    <option value="veryactive">Very Active</option>
+                    <option value="extraactive">Extra Active</option>
+                </select>
+
+                <label for="calories" class="text">Daily Caloric Intake:</label>
+                <input type="text" class="text-input" id="calories" name="Calories" />
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" id="submit">Calculate</button>
+
+        <!-- Result Container -->
+        <div id="result-container">        
+            <div id="bmi-container" style="display: none;"></div>
+            <div id="bodyfat-container" style="display: none;"></div>
+            <div id="idealweight-container" style="display: none;"></div>
+            <div id="caloriesburned-container" style="display: none;"></div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
